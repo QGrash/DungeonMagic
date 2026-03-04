@@ -272,6 +272,7 @@ namespace MagicalDungeon
                     Console.WriteLine($"8 - Зелье маны (+30 MP) [{player.ManaPotions}]");
                     Console.WriteLine($"9 - Зелье стойкости (3 заряда) [{player.ArmorPotions}]");
                     Console.WriteLine($"0 - Странное зелье (??? ) [{player.StrangePotions}]");
+                    Console.WriteLine("10 - Магическая медитация (пропустить ход)");
                     Console.Write("Твой выбор: ");
 
                     string input = Console.ReadLine();
@@ -411,6 +412,13 @@ namespace MagicalDungeon
                             player.ResetBarrier();
                         }
                     }
+                    // добавление обработки медитации
+                    else if (choice == 10)
+                    {
+                        Console.WriteLine("Ты погружаешься в медитацию, восстанавливая внутренний баланс...");
+                        turnUsed = true;
+                        player.ResetBarrier();
+                    }
                     else
                     {
                         Console.WriteLine("Неверный ввод. Попробуй ещё.");
@@ -476,6 +484,7 @@ namespace MagicalDungeon
                     Console.WriteLine($"8 - Зелье маны (+30 MP) [{player.ManaPotions}]");
                     Console.WriteLine($"9 - Зелье стойкости (3 заряда) [{player.ArmorPotions}]");
                     Console.WriteLine($"0 - Странное зелье (??? ) [{player.StrangePotions}]");
+                    Console.WriteLine("10 - Магическая медитация (пропустить ход)");
                     Console.Write("Твой выбор: ");
 
                     string input = Console.ReadLine();
@@ -595,6 +604,12 @@ namespace MagicalDungeon
                             turnUsed = true;
                             player.ResetBarrier();
                         }
+                    }
+                    else if (choice == 10)
+                    {
+                        Console.WriteLine("Ты погружаешься в медитацию, восстанавливая внутренний баланс...");
+                        turnUsed = true;
+                        player.ResetBarrier();
                     }
                     else
                     {
